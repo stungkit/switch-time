@@ -32,6 +32,7 @@ jobs:
 
       - name: build
         run: |
+          chown -R $(whoami):$(whoami) .
           make
           mkdir -p dist
           mv switch-time.nro dist

@@ -204,11 +204,7 @@ ifneq ($(ROMFS),)
 	export NROFLAGS += --romfsdir=$(CURDIR)/$(ROMFS)
 endif
 
-.PHONY: $(BUILD) clean all version
-
-#---------------------------------------------------------------------------------
-version:
-	@echo $(APP_VERSION)
+.PHONY: $(BUILD) version clean all
 
 #---------------------------------------------------------------------------------
 all: $(BUILD)
@@ -226,6 +222,10 @@ else
 	@rm -fr $(BUILD) $(TARGET).nsp $(TARGET).nso $(TARGET).npdm $(TARGET).elf
 endif
 
+
+#---------------------------------------------------------------------------------
+version:
+	@echo $(APP_VERSION)
 
 #---------------------------------------------------------------------------------
 else
